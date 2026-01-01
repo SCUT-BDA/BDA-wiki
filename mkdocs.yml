@@ -2,6 +2,7 @@
 site_name: SCUT-BDA Wiki
 site_description: 华南理工大学大数据应用协会
 site_author: SCUT BigData Association
+site_url: 'https://bda-scut.github.io/BDA-wiki/'
 
 # Repository
 repo_name: SCUT-BDA/BDA-wiki
