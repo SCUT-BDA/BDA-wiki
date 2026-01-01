@@ -29,17 +29,20 @@
     <p>
         <span class="twemoji">{% include ".icons/material/account-group.svg" %}</span>
         本页面贡献者：
-        {% if git_page_authors %}
-        {{ git_page_authors }}
+        {% if committers and committers | length > 0 %}
+        {% for user in committers %}
+        <a href="{{ user.url }}" target="_blank" style="color:#3f51b5;text-decoration:none;">
+            {{ user.login }}
+        </a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
         {% else %}
-        SCUT-BDA Team (尚未识别到 Git 作者)
+        SCUT-BDA Team
         {% endif %}
     </p>
 
-    <p style="font-size:0.75rem;color:#999">
-        [ 调试信息: git_page_authors = {{ git_page_authors | default("None", true) }} ]
+    <p style="font-size:12px;color:#999">
+        committers = {{ committers }}
     </p>
-
 
     <p>
         <span class="twemoji">{% include ".icons/material/copyright.svg" %}</span>
