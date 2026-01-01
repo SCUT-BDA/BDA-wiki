@@ -52,6 +52,7 @@ theme:
 
 
 
+
 # Navigation
 nav:
   - 简介:
@@ -77,6 +78,8 @@ markdown_extensions:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
 
+docs_dir: docs
+
 plugins:
   - search
   - git-revision-date-localized:
@@ -84,4 +87,4 @@ plugins:
       type: datetime
       timezone: Asia/Shanghai
   - git-authors:
-      show_contribution: true
+      enabled: true

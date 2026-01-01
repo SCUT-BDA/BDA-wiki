@@ -27,15 +27,16 @@
     {% endif %}
 
     <p>
+        [ 调试信息: 作者数量 = {{ page.authors | length }} ]
+
         <span class="twemoji">{% include ".icons/material/account-group.svg" %}</span>
         本页面贡献者：
-        {% if page.authors %}
+        {% if page.authors and page.authors | length > 0 %}
         {% for author in page.authors %}
-        <span style="color: #3f51b5;">{{ author.name if author.name else author.login }}</span>{% if not loop.last %},
-        {% endif %}
+        <span style="color: #3f51b5;">{{ author.name }}</span>{% if not loop.last %}, {% endif %}
         {% endfor %}
         {% else %}
-        SCUT-BDA Team
+        SCUT-BDA Team (尚未识别到 Git 作者)
         {% endif %}
     </p>
 
