@@ -2,16 +2,21 @@
 
 
 
-# 欢迎来到 **BDA Wiki**！
+# 欢迎来到 **BDA Wiki** 👋
+
 
 <div align="center">
-  <p><b>华南理工大学大数据协会 (SCUT-BDA)</b></p>
+  <h3><p><strong>华南理工大学大数据协会（SCUT Big Data Association, SCUT-BDA）</strong></p></h3>
 </div>
+
+<div align="center">
 
 [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/SCUT-BDA/BDA-wiki/deploy.yml?style=flat-square&branch=main&label=Deploy)](https://github.com/SCUT-BDA/BDA-wiki/actions)
 [![GitHub watchers](https://img.shields.io/github/watchers/SCUT-BDA/BDA-wiki.svg?style=social&label=Watch)](https://github.com/SCUT-BDA/BDA-wiki)
 [![GitHub stars](https://img.shields.io/github/stars/SCUT-BDA/BDA-wiki.svg?style=social&label=Stars)](https://github.com/SCUT-BDA/BDA-wiki)
 [![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by-sa/4.0/)
+
+</div>
 
 ---
 
@@ -34,34 +39,12 @@ To be filled ...
 ### 快速开始
 
 ```bash
-git clone https://github.com/OI-wiki/OI-wiki.git --depth=1
+git clone https://github.com/SCUT-BDA/BDA-wiki.git --depth=1
 
-cd OI-wiki
+cd BDA-wiki
 
-# 安装 uv (如果尚未安装)
-pip install uv
+mkdocs serve
 
-# 安装依赖
-uv sync --index-url https://pypi.tuna.tsinghua.edu.cn/simple/
-
-# 使用自定义主题（Windows 下请使用 Git Bash 执行）
-# 安装主题时将连接网络下载资源，可通过以下配置项控制下载链接
-# .gitmodules:
-# - url
-# scripts/pre-build/install-theme-vendor.sh:
-# - MATHJAX_URL
-# - MATERIAL_ICONS_URL
-./scripts/pre-build/install-theme.sh
-
-# 两种方法（选其一即可）：
-# 1. 运行一个本地服务器，访问 http://127.0.0.1:8000 本地预览
-uv run mkdocs serve -v
-
-# 2. 在 site 文件夹下得到静态页面
-uv run mkdocs build -v
-
-# 获取 mkdocs 的命令行工具的说明（解释了命令和参数的含义）
-uv run mkdocs --help
 ```
 
 ---
