@@ -39,12 +39,17 @@ To be filled ...
 ### 快速开始
 
 ```bash
+# 克隆仓库
 git clone https://github.com/SCUT-BDA/BDA-wiki.git --depth=1
-
 cd BDA-wiki
 
-mkdocs serve
+# 创建虚拟环境（可选）
 
+# 安装依赖
+pip install -r requirements.txt
+
+# 启动本地服务器 (或运行脚本 ./run.sh)
+mkdocs serve 
 ```
 
 ---
