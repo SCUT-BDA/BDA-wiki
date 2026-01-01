@@ -7,6 +7,7 @@ site_url: 'https://bda-scut.github.io/BDA-wiki/'
 # Repository
 repo_name: SCUT-BDA/BDA-wiki
 repo_url: 'https://github.com/SCUT-BDA/BDA-wiki'
+edit_uri: 'edit/main/docs/'
 
 # Copyright
 copyright: 'Copyright &copy; 2026 SCUT BigData Association. All rights reserved.' 
@@ -14,12 +15,18 @@ copyright: 'Copyright &copy; 2026 SCUT BigData Association. All rights reserved.
 # Theme configuration
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   features:
-    - content.action.edit
-    - navigation.tabs
-    - navigation.instant
-    - content.code.copy
+    - navigation.tabs      # 顶部大栏目切换
+    - navigation.sections  # 侧边栏分级显示
+    # - navigation.top       # 回到顶部按钮
+    - navigation.tracking  # 滚动时侧边栏自动定位
+    - navigation.instant   # 即时导航
+    - content.action.edit  # 编辑此页按钮
+    - content.code.copy    # 代码复制按钮
+    - search.suggest       # 搜索建议
+    - search.highlight     # 搜索高亮
   palette:
     # palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -40,11 +47,19 @@ theme:
   font:
     text: 'Fira Sans'
     code: 'Fira Mono'
+  logo: assets/logo.jpg
+  favicon: assets/favicon-16x16.png
+
 
 
 # Navigation
 nav:
-  - 首页: index.md
+  - 简介:
+    - Getting Started: index.md
+    - 关于本项目: intro/about.md
+    - 贡献指南: intro/contribution.md
+    - 致谢: intro/acknowledgements.md
+  - 基础知识: basic.md
 
 markdown_extensions:
   - admonition
@@ -55,6 +70,18 @@ markdown_extensions:
   - pymdownx.superfences
   - toc:
       permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_fallback: true
+      type: datetime
+      timezone: Asia/Shanghai
+  - git-authors:
+      show_contribution: true

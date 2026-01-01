@@ -1,0 +1,47 @@
+{% block content %}
+{% if page.edit_url %}
+<a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
+    {% include ".icons/material/pencil.svg" %}
+</a>
+{% endif %}
+
+{% if not "\x3ch1" in page.content %}
+<h1>{{ page.title | default(config.site_name, true) }}</h1>
+{% endif %}
+{{ page.content }}
+
+<hr>
+<div style="font-size: 0.8rem; color: #666; line-height: 1.6;">
+
+    <p>
+        <span class="twemoji">{% include ".icons/material/wrench.svg" %}</span>
+        本页面最近更新：{{ page.meta.git_revision_date_localized | default("尚未提交至 Git", true) }}
+    </p>
+
+    {% if page.edit_url %}
+    <p>
+        <span class="twemoji">{% include ".icons/material/pencil.svg" %}</span>
+        发现错误？想一起完善？
+        <a href="{{ page.edit_url }}" target="_blank" style="color: #2196f3; text-decoration: none;">在 GitHub 上编辑此页！</a>
+    </p>
+    {% endif %}
+
+    <p>
+        <span class="twemoji">{% include ".icons/material/account-group.svg" %}</span>
+        本页面贡献者：
+        {% if page.authors %}
+        {% for author in page.authors %}
+        <span style="color: #3f51b5;">{{ author.name if author.name else author.login }}</span>{% if not loop.last %},
+        {% endif %}
+        {% endfor %}
+        {% else %}
+        SCUT-BDA Team
+        {% endif %}
+    </p>
+
+    <p>
+        <span class="twemoji">{% include ".icons/material/copyright.svg" %}</span>
+        本页面的全部内容在 <strong>CC BY-SA 4.0</strong> 和 <strong>SATA</strong> 协议之条款下提供。
+    </p>
+</div>
+{% endblock %}
