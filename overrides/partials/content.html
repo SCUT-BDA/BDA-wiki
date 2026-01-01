@@ -27,18 +27,19 @@
     {% endif %}
 
     <p>
-        [ 调试信息: 作者数量 = {{ page.authors | length }} ]
-
         <span class="twemoji">{% include ".icons/material/account-group.svg" %}</span>
         本页面贡献者：
-        {% if page.authors and page.authors | length > 0 %}
-        {% for author in page.authors %}
-        <span style="color: #3f51b5;">{{ author.name }}</span>{% if not loop.last %}, {% endif %}
-        {% endfor %}
+        {% if git_page_authors %}
+        {{ git_page_authors }}
         {% else %}
         SCUT-BDA Team (尚未识别到 Git 作者)
         {% endif %}
     </p>
+
+    <p style="font-size:0.75rem;color:#999">
+        [ 调试信息: git_page_authors = {{ git_page_authors | default("None", true) }} ]
+    </p>
+
 
     <p>
         <span class="twemoji">{% include ".icons/material/copyright.svg" %}</span>
