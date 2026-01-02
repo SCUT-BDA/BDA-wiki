@@ -29,4 +29,5 @@ jobs:
 
       - name: Build site
         env:
-        run: mkdocs build
+            MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
+        run: mkdocs build --strict
