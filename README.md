@@ -12,8 +12,8 @@
 <div align="center">
 
 [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/SCUT-BDA/BDA-wiki/deploy.yml?style=flat-square&branch=main&label=Deploy)](https://github.com/SCUT-BDA/BDA-wiki/actions)
-[![GitHub watchers](https://img.shields.io/github/watchers/SCUT-BDA/BDA-wiki.svg?style=social&label=Watch)](https://github.com/SCUT-BDA/BDA-wiki)
-[![GitHub stars](https://img.shields.io/github/stars/SCUT-BDA/BDA-wiki.svg?style=social&label=Stars)](https://github.com/SCUT-BDA/BDA-wiki)
+[![GitHub stars](https://img.shields.io/github/stars/SCUT-BDA/BDA-wiki?style=social)](https://github.com/SCUT-BDA/BDA-wiki)
+[![GitHub forks](https://img.shields.io/github/forks/SCUT-BDA/BDA-wiki?style=social)](https://github.com/SCUT-BDA/BDA-wiki)
 [![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 </div>
