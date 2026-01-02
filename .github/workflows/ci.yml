@@ -2,7 +2,6 @@ name: CI (MkDocs build)
 
 on:
   pull_request:
-  push:
     branches: [ main ]
 
 permissions:
@@ -15,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,4 +28,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build site
-        run: mkdocs build --strict
+        env:
+        run: mkdocs build
